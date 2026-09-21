@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estudiantes</title>
+</head>
+<body>
+
+<h1>Lista de Estudiantes</h1>
+
+<form action="/estudiantes" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre">
+
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+
+    <br><br>
+
+    <button type="submit">Guardar Estudiante</button>
+</form>
+
+<h2>Estudiantes registrados</h2>
+
+<ul>
+    <li th:each="estudiante : ${estudiantes}">
+        Nombre: <span th:text="${estudiante.nombre}"></span>
+        -
+        Email: <span th:text="${estudiante.email}"></span>
+    </li>
+</ul>
+
+</body>
+</html>
